@@ -32,6 +32,6 @@ if so, it's better to send the customerID as a path variable or query parameter.
 * Should I count requests receiving from an IP or User-Agent which is in black-list, or prevent attackers from putting load on our database?
 * Should I prevent a black-listed IP to access request-validator endpoint or also daily-stats endpoint?
 
-### Libraries
+### References
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
 * [Spring Boot](https://docs.spring.io/spring-boot/docs/2.3.4.RELEASE/reference/htmlsingle/)
