@@ -2,7 +2,7 @@
 *  JDK 11 (set JAVA_HOME environment variable *)
 *  Maven
 
-##Run Instruction:
+## Run Instruction:
 1. open a terminal in the request-validator directory.
 
 1. Build a jar file with Maven:
@@ -12,7 +12,7 @@
 1. Open following URL in your browser to see API documentation:
    * http://localhost:8080/swagger-ui.html
 
-##Project Information
+## Project Information
 This project assumes you need stats of all valid and invalid requests until current moment at any time.
 So there is an update operation per each validation request on hourly_stats table.
 If in each point of time you just need the stats of previous hours or previous days(not current hour), we can eliminate
@@ -24,7 +24,7 @@ asynchronously.
 we can even make it faster and publish each request-status in a message broker(kafka) and then a
 subscriber insert them to request-status table.
 
-##Task Definition Improvements
+## Task Definition Improvements
 It is better to clarify followings in the task definition:
 * Requests are generate by your collector so if there is a malformed json should I count it as invalid for the customer?
 if so, it's better to send the customerID as a path variable or query parameter.
