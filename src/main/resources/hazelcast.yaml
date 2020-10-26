@@ -1,0 +1,57 @@
+hazelcast:
+  network:
+    join:
+      multicast:
+        enabled: true
+
+  serialization:
+    serializers:
+      - type-class: com.theadex.requestvalidator.domain.Customer
+        class-name: com.theadex.requestvalidator.cacheserializer.CustomerSerializer
+#  map:
+#    name: customers
+#    max-size: 1000
+#    eviction-policy: LRU
+#    eviction-percentage: 10
+#    time-to-live-seconds: 300
+
+  cache:
+    customers:
+      key-type:
+        class-name: java.lang.Long
+      value-type:
+        class-name: com.theadex.requestvalidator.domain.Customer
+      eviction:
+        size: 1000
+        max-size-policy: ENTRY_COUNT
+        eviction-policy: LFU
+      event-journal:
+        enabled: false
+        capacity: 1000
+        time-to-live-seconds: 600
+    userAgentBlackList:
+      key-type:
+        class-name: java.lang.string
+      value-type:
+        class-name: java.lang.string
+      eviction:
+        size: 1000
+        max-size-policy: ENTRY_COUNT
+        eviction-policy: LRU
+      event-journal:
+        enabled: false
+        capacity: 1000
+        time-to-live-seconds: 600
+    ipBlackList:
+      key-type:
+        class-name: java.lang.string
+      value-type:
+        class-name: java.net.Inet4Address
+      eviction:
+        size: 1000
+        max-size-policy: ENTRY_COUNT
+        eviction-policy: LRU
+      event-journal:
+        enabled: false
+        capacity: 1000
+        time-to-live-seconds: 600
