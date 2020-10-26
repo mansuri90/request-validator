@@ -1,4 +1,4 @@
-##Requirements:
+## Requirements:
 *  JDK 11 (set JAVA_HOME environment variable *)
 *  Maven
 
